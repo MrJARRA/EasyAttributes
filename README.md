@@ -75,7 +75,7 @@ public class Easy : MonoBehaviour
 }
 ```
 ## Tag & Layer & Sprite Layer
-Get  tag or layer or sprite layer
+Select an  tag or layer or sprite layer via dropdown interface.
 
 ```c#
 using EasyAttributes;
@@ -95,6 +95,7 @@ public class Easy : MonoBehaviour
 
 ## DefinedValues
 
+Provides an interface for dropdown value selection( int , string ,float , vector ...).
 ```c#
 using EasyAttributes;
 
@@ -110,4 +111,374 @@ public class Easy : MonoBehaviour
 	public float myFloat;
 }
 ```
+## CurveRange
+Set bounds and modify curve color for AnimationCurves
 
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+	[CurveRange(-1, -1, 1, 1)]
+	public AnimationCurve curve;
+	
+	[CurveRange(EColor.Orange)]
+	public AnimationCurve curve1;
+	
+	[CurveRange(0, 0, 5, 5, EColor.Red)]
+	public AnimationCurve curve2;
+}
+```
+
+## EnumFlags
+Provides dropdown interface for setting enum flags.
+
+```c#
+using EasyAttributes;
+public enum Direction
+{
+	None = 0,
+	Right = 1 << 0,
+	Left = 1 << 1,
+	Up = 1 << 2,
+	Down = 1 << 3
+}
+public class Easy : MonoBehaviour
+{
+	[EnumFlags]
+	public Direction flags;
+}
+```
+
+## HorizontalLine
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+	[HorizontalLine(color: EColor.Red)]
+	public int red;
+
+	[HorizontalLine(color: EColor.Green)]
+	public int green;
+
+	[HorizontalLine(color: EColor.Blue)]
+	public int blue;
+}
+```
+
+## InfoBox
+Used for providing additional information.
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        [InfoBox("This is my int", EInfoBoxType.Normal)]
+	public int myInt;
+
+	[InfoBox("This is my float", EInfoBoxType.Warning)]
+	public float myFloat;
+
+	[InfoBox("This is my vector", EInfoBoxType.Error)]
+	public Vector3 myVector;
+}
+```
+
+## InputAxis
+Select an input axis via dropdown interface.
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+     [InputAxis]
+	public string inputAxis;
+}
+```
+## MinMaxSlider
+A double slider. The min value is saved to the **X** property, and the **max value** is saved to the **Y** property of a **Vector2** field.
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+     [MinMaxSlider(0.0f, 100.0f)]
+     public Vector2 minMaxSlider;
+}
+```
+## ProgressBar
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        [ProgressBar("Health", 300, EColor.Red)]
+	public int health = 250;
+
+	[ProgressBar("Mana", 100, EColor.Blue)]
+	public int mana = 25;
+
+	[ProgressBar("Stamina", 200, EColor.Green)]
+	public int stamina = 150;
+}
+```
+## ReorderableList
+Provides array type fields with an interface for easy reordering of elements.
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        [ReorderableList]
+	public int[] intArray;
+
+	[ReorderableList]
+	public List<float> floatArray;
+}
+```
+
+## ReadOnly
+Makes a field read only.
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        [ReadOnly]
+	public Vector3 forwardVector = Vector3.forward;
+}
+```
+## ResizableTextArea
+A resizable text area where you can see the whole text. Unlike Unity's **Multiline** and **TextArea** attributes where you can see only 3 rows of a given text, and in order to see it or modify it you have to manually scroll down to the desired row.
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        [ResizableTextArea]
+	public string resizableTextArea;
+}
+```
+## Scene
+Select a scene from the build settings via dropdown interface.
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        [Scene]
+	public string bootScene; // scene name
+
+	[Scene]
+	public int tutorialScene; // scene index
+}
+```
+## ShowAssetPreview
+Shows the texture preview of a given asset (Sprite, Prefab...).
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        [ShowAssetPreview]
+	public Sprite sprite;
+
+	[ShowAssetPreview(128, 128)]
+	public GameObject prefab;
+}
+```
+## ShowNativeProperty
+Shows native C# properties in the inspector. All native properties are displayed at the bottom of the inspector after the non-serialized fields and before the method buttons. It supports only certain types **(bool, int, long, float, double, string, Vector2, Vector3, Vector4, Color, Bounds, Rect, UnityEngine.Object)**.
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        public List<Transform> transforms;
+
+	[ShowNativeProperty]
+	public int TransformsCount => transforms.Count;
+}
+```
+## ShowNonSerializedField
+Shows non-serialized fields in the inspector. All non-serialized fields are displayed at the bottom of the inspector before the method buttons. Keep in mind that if you change a non-static non-serialized field in the code - the value in the inspector will be updated after you press **Play** in the editor. There is no such issue with static non-serialized fields because their values are updated at compile time. It supports only certain types **(bool, int, long, float, double, string, Vector2, Vector3, Vector4, Color, Bounds, Rect, UnityEngine.Object)**.
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        [ShowNonSerializedField]
+	private int myInt = 10;
+
+	[ShowNonSerializedField]
+	private const float PI = 3.14159f;
+
+	[ShowNonSerializedField]
+	private static readonly Vector3 CONST_VECTOR = Vector3.one;
+}
+```
+## EnableIf / DisableIf
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        public bool enableMyInt;
+
+	[EnableIf("enableMyInt")]
+	public int myInt;
+
+	[EnableIf("Enabled")]
+	public float myFloat;
+
+	[EnableIf("NotEnabled")]
+	public Vector3 myVector;
+
+	public bool Enabled() { return true; }
+
+	public bool NotEnabled => false;
+}
+```
+
+You can have more than one condition.
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        public bool flag0;
+	public bool flag1;
+
+	[EnableIf(EConditionOperator.And, "flag0", "flag1")]
+	public int enabledIfAll;
+
+	[EnableIf(EConditionOperator.Or, "flag0", "flag1")]
+	public int enabledIfAny;
+}
+```
+## ShowIf / HideIf
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        public bool showInt;
+
+	[ShowIf("showInt")]
+	public int myInt;
+
+	[ShowIf("AlwaysShow")]
+	public float myFloat;
+
+	[ShowIf("NeverShow")]
+	public Vector3 myVector;
+
+	public bool AlwaysShow() { return true; }
+
+	public bool NeverShow => false;
+}
+```
+
+You can have more than one condition.
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        public bool flag0;
+	public bool flag1;
+
+	[ShowIf(EConditionOperator.And, "flag0", "flag1")]
+	public int showIfAll;
+
+	[ShowIf(EConditionOperator.Or, "flag0", "flag1")]
+	public int showIfAny;
+}
+```
+## ShortName
+Override default field label.
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        [ShortName("Short Name")]
+	public string veryVeryLongName;
+
+	[ShortName("RGB")]
+	public Vector3 vectorXYZ;
+}
+```
+## OnValueChanged
+Detects a value change and executes a callback. Keep in mind that the event is detected only when the value is changed from the inspector. If you want a runtime event, you should probably use an event/delegate and subscribe to it.
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        [OnValueChanged("OnValueChangedCallback")]
+	public int myInt;
+
+	private void OnValueChangedCallback()
+	{
+		Debug.Log(myInt);
+	}
+}
+```
+## Required
+Used to remind the developer that a given reference type field is required.
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        [Required]
+	public Transform myTransform;
+
+	[Required("Custom required text")]
+	public GameObject myGameObject;
+}
+```
+## ValidateInput
+The most powerful ValidatorAttribute.
+
+```c#
+using EasyAttributes;
+
+public class Easy : MonoBehaviour
+{
+        [ValidateInput("IsNotNull")]
+	public Transform myTransform;
+
+	[ValidateInput("IsGreaterThanZero", "myInteger must be greater than zero")]
+	public int myInt;
+
+	private bool IsNotNull(Transform tr)
+	{
+		return tr != null;
+	}
+
+	private bool IsGreaterThanZero(int value)
+	{
+		return value > 0;
+	}
+}
+```
