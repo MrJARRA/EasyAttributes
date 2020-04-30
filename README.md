@@ -21,6 +21,23 @@ Unity 2018.3.0 or later versions. Feel free to try older version. Don't forget t
 `"com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm"`
 
 ## Support
+If you would like to support me
+* [My Patreon](https://www.patreon.com/FlyoFun)
+* [Buy Me A Coffee](https://www.buymeacoffee.com/xjQoRlt)
+
+
+
+
+```c#
+public class NaughtyComponent : MonoBehaviour
+{
+	[Button]
+	private void MethodOne() { }
+
+	[Button("Button Text")]
+	private void MethodTwo() { }
+}
+```
 
 
 
