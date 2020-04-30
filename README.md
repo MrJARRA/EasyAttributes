@@ -498,3 +498,8 @@ public class Easy : MonoBehaviour
 }
 ```
 ![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/ValidateInput.png)
+
+
+**Copyright (c) 2017 Denis Rizov**  and **Copyright (c) 2018 Andrew Rumak**
+
+
