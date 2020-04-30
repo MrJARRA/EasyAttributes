@@ -364,6 +364,7 @@ public class Easy : MonoBehaviour
 }
 ```
 ![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/EnableIf_Inspector.gif)
+
 You can have more than one condition.
 
 ```c#
@@ -404,6 +405,7 @@ public class Easy : MonoBehaviour
 }
 ```
 ![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/ShowIf_Inspector.gif)
+
 You can have more than one condition.
 
 ```c#
@@ -495,4 +497,4 @@ public class Easy : MonoBehaviour
 	}
 }
 ```
-![Image](hhttps://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/ValidateInput.png)
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/ValidateInput.png)
