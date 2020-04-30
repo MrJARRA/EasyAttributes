@@ -1,0 +1,38 @@
+﻿using System;
+
+namespace EasyAttributes
+{
+	public enum EButtonEnableMode
+	{
+		/// <summary>
+		/// Button should be active always
+		/// </summary>
+		Always,
+		/// <summary>
+		/// Button should be active only in editor
+		/// </summary>
+		Editor,
+		/// <summary>
+		/// Button should be active only in playmode
+		/// </summary>
+		Playmode
+	}
+
+	[AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
+	public class ButtonAttribute : SpecialCaseDrawerAttribute
+	{
+		public string Text { get; private set; }
+		public EButtonEnableMode SelectedEnableMode { get; private set; }
+
+		public const EColor DefaultColor = EColor.Gray;
+
+
+		public EColor Color { get; private set; }
+		public ButtonAttribute(string text = null, EColor color = DefaultColor, EButtonEnableMode enabledMode = EButtonEnableMode.Always)
+		{
+			this.Text = text;
+			Color = color;
+			this.SelectedEnableMode = enabledMode;
+		}
+	}
+}
