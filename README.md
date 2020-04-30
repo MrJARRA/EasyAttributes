@@ -48,7 +48,7 @@ public class Easy : MonoBehaviour
 	private void Method4() { }
 }
 ```
-
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/Button.png)
 ## BoxGroup
 Surrounds grouped fields with a box.
 ```c#
@@ -74,6 +74,7 @@ public class Easy : MonoBehaviour
 	public string myTag;
 }
 ```
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/BoxGroup.png)
 ## Tag & Layer & Sprite Layer
 Select an  tag or layer or sprite layer via dropdown interface.
 
@@ -92,7 +93,7 @@ public class Easy : MonoBehaviour
 	public int mySpriteLayer;
 }
 ```
-
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/Tag-Layer-SpriteLayer.png)
 ## DefinedValues
 
 Provides an interface for dropdown value selection( int , string ,float , vector ...).
@@ -111,6 +112,7 @@ public class Easy : MonoBehaviour
 	public float myFloat;
 }
 ```
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/DefinedValues.png)
 ## CurveRange
 Set bounds and modify curve color for AnimationCurves
 
@@ -129,7 +131,7 @@ public class Easy : MonoBehaviour
 	public AnimationCurve curve2;
 }
 ```
-
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/CurveRange.png)
 ## EnumFlags
 Provides dropdown interface for setting enum flags.
 
@@ -149,7 +151,7 @@ public class Easy : MonoBehaviour
 	public Direction flags;
 }
 ```
-
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/EnumFlags.png)
 ## HorizontalLine
 
 ```c#
@@ -167,7 +169,7 @@ public class Easy : MonoBehaviour
 	public int blue;
 }
 ```
-
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/HorizontalLine.png)
 ## InfoBox
 Used for providing additional information.
 
@@ -186,7 +188,7 @@ public class Easy : MonoBehaviour
 	public Vector3 myVector;
 }
 ```
-
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/InfoBox.png)
 ## InputAxis
 Select an input axis via dropdown interface.
 
@@ -199,6 +201,7 @@ public class Easy : MonoBehaviour
 	public string inputAxis;
 }
 ```
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/InputAxis.png)
 ## MinMaxSlider
 A double slider. The min value is saved to the **X** property, and the **max value** is saved to the **Y** property of a **Vector2** field.
 
@@ -211,6 +214,7 @@ public class Easy : MonoBehaviour
      public Vector2 minMaxSlider;
 }
 ```
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/MinMaxSlider.png)
 ## ProgressBar
 
 ```c#
@@ -228,6 +232,7 @@ public class Easy : MonoBehaviour
 	public int stamina = 150;
 }
 ```
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/ProgressBar.png)
 ## ReorderableList
 Provides array type fields with an interface for easy reordering of elements.
 
@@ -243,7 +248,7 @@ public class Easy : MonoBehaviour
 	public List<float> floatArray;
 }
 ```
-
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/ReorderableList_Inspector.gif)
 ## ReadOnly
 Makes a field read only.
 
@@ -256,6 +261,7 @@ public class Easy : MonoBehaviour
 	public Vector3 forwardVector = Vector3.forward;
 }
 ```
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/ReadOnly.png)
 ## ResizableTextArea
 A resizable text area where you can see the whole text. Unlike Unity's **Multiline** and **TextArea** attributes where you can see only 3 rows of a given text, and in order to see it or modify it you have to manually scroll down to the desired row.
 
@@ -268,6 +274,7 @@ public class Easy : MonoBehaviour
 	public string resizableTextArea;
 }
 ```
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/ResizableTextArea.png)
 ## Scene
 Select a scene from the build settings via dropdown interface.
 
@@ -283,6 +290,7 @@ public class Easy : MonoBehaviour
 	public int tutorialScene; // scene index
 }
 ```
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/Scene.png)
 ## ShowAssetPreview
 Shows the texture preview of a given asset (Sprite, Prefab...).
 
@@ -298,6 +306,7 @@ public class Easy : MonoBehaviour
 	public GameObject prefab;
 }
 ```
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/ShowAssetPreview.png)
 ## ShowNativeProperty
 Shows native C# properties in the inspector. All native properties are displayed at the bottom of the inspector after the non-serialized fields and before the method buttons. It supports only certain types **(bool, int, long, float, double, string, Vector2, Vector3, Vector4, Color, Bounds, Rect, UnityEngine.Object)**.
 
@@ -312,6 +321,7 @@ public class Easy : MonoBehaviour
 	public int TransformsCount => transforms.Count;
 }
 ```
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/ShowNativeProperty.png)
 ## ShowNonSerializedField
 Shows non-serialized fields in the inspector. All non-serialized fields are displayed at the bottom of the inspector before the method buttons. Keep in mind that if you change a non-static non-serialized field in the code - the value in the inspector will be updated after you press **Play** in the editor. There is no such issue with static non-serialized fields because their values are updated at compile time. It supports only certain types **(bool, int, long, float, double, string, Vector2, Vector3, Vector4, Color, Bounds, Rect, UnityEngine.Object)**.
 
@@ -330,6 +340,7 @@ public class Easy : MonoBehaviour
 	private static readonly Vector3 CONST_VECTOR = Vector3.one;
 }
 ```
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/ShowNonSerializedField.png)
 ## EnableIf / DisableIf
 ```c#
 using EasyAttributes;
@@ -352,7 +363,7 @@ public class Easy : MonoBehaviour
 	public bool NotEnabled => false;
 }
 ```
-
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/EnableIf_Inspector.gif)
 You can have more than one condition.
 
 ```c#
@@ -392,7 +403,7 @@ public class Easy : MonoBehaviour
 	public bool NeverShow => false;
 }
 ```
-
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/ShowIf_Inspector.gif)
 You can have more than one condition.
 
 ```c#
@@ -425,6 +436,7 @@ public class Easy : MonoBehaviour
 	public Vector3 vectorXYZ;
 }
 ```
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/ShortName.png)
 ## OnValueChanged
 Detects a value change and executes a callback. Keep in mind that the event is detected only when the value is changed from the inspector. If you want a runtime event, you should probably use an event/delegate and subscribe to it.
 
@@ -457,6 +469,7 @@ public class Easy : MonoBehaviour
 	public GameObject myGameObject;
 }
 ```
+![Image](https://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/Required.png)
 ## ValidateInput
 The most powerful ValidatorAttribute.
 
@@ -482,3 +495,4 @@ public class Easy : MonoBehaviour
 	}
 }
 ```
+![Image](hhttps://github.com/MrJARRA/EasyAttributes/blob/master/Documentation/ValidateInput.png)
